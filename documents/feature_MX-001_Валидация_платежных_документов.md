@@ -15,9 +15,9 @@
 |-------------------------|------------|----------------------------------------------------------------|-----------------|-------------------------------------|
 | validation_process_id   | uuid       | Уникальный идентификатор                                       | primary_key     | 71f5135e-fb46-415c-b4cf-bbb9be5692d |
 | dir_ref                 | varchar    | Cсылка в windows проводнике на каталог с валидируемыми файлами | nullable: false | c:/Users/Ivanov/test/               |
-| is_success              | boolean    | Прошел валидацию каталог или нет                               | nullable: false | true false                          |
-| total_doc_ref           | varchar    | Ссылка на итоговый документ                                    | nullable: false | с:/Users/Ivanov/test/total          |
-| validation_process_date | timestamp  | Дата завершения процесса валидации                             | nullable: false | 2023-11-14 15:02:38.550722          |
+| status                  | enum       | Прошел валидацию каталог или нет                               | nullable: false | success failure merged              |
+| total_doc_ref           | varchar    | Ссылка на итоговый документ (после статуса merged)             | nullable: true  | с:/Users/Ivanov/test/total          |
+| validation_process_date | timestamp  | Дата последнего обновления                                     | nullable: false | 2023-11-14 15:02:38.550722          |
 
 **validation_file_history**
 
